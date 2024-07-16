@@ -8,15 +8,16 @@
       <th>PRODUCT</th>
       <th>PRICE</th>
       <th>QUANTITY</th>
+      <th>REMOVE</th>
     </tr>
   </thead>
   <tbody>
     @for (item of items; track $index) {
-    <tr row-item [item]="item"></tr>
+    <tr row-item [item]="item" (removeEventEmitter)="onRemove($event)"></tr>
     }
   </tbody>
 </table>
 
 } @else {
-<div class="alert alert-warning">No contiene items.</div>
+<div class="alert alert-warning">No hay items en la factura.</div>
 }
