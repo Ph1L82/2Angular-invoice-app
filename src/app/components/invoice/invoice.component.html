@@ -15,8 +15,12 @@
           <company-view [company]="invoice.company"></company-view>
         </div>
       </div>
-      <list-items [items]="invoice.items" (removeEventEmitter)="removeItem($event)"></list-items>
+      <list-items
+        [items]="invoice.items"
+        (removeEventEmitter)="removeItem($event)"
+      ></list-items>
       <total [total]="invoice.total" />
+      <form-item (addItemEventEmitter)="addItem($event)" />
     </div>
   </div>
 </div>
